@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineDownload } from 'react-icons/ai'
-import { BsFillCircleFill } from 'react-icons/bs'
+import {
+  BsChevronCompactDown,
+  BsChevronCompactUp,
+  BsFillCircleFill,
+} from 'react-icons/bs'
 
 import bulma from './images/bulma.svg'
 import cSharp from './images/cSharp.svg'
@@ -10,13 +14,29 @@ import css3 from './images/css3.svg'
 import html5 from './images/html5.svg'
 import react from './images/react.svg'
 import tailwindcss from './images/tailwindcss.svg'
+import hhh from './images/hhh.png'
 
 export function Home() {
+  const [title, setTitle] = useState('Fontend Developer')
+
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-200">
+    <div
+      id="home"
+      className="flex h-screen items-center justify-center bg-gray-200 snap-start"
+    >
       <div className="flex-col">
         <h1 className="name">Karl Frick</h1>
-        <h3 className="nouns">Is a Frontend Developer</h3>
+        <h3 className="nouns">Is a {title}</h3>
+        <div className="flex justify-center">
+          <BsChevronCompactDown
+            onClick={() => {
+              document
+                .getElementById('about')
+                .scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-9xl"
+          />
+        </div>
       </div>
     </div>
   )
@@ -24,8 +44,18 @@ export function Home() {
 
 export function About() {
   return (
-    <div className="flex h-screen">
+    <div id="about" className="flex h-screen snap-start">
       <div className="flex-col self-center m-6 md:m-48 lg:m-60 xl:m-100">
+        <div className="flex justify-center">
+          <BsChevronCompactUp
+            onClick={() => {
+              document
+                .getElementById('home')
+                .scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-9xl"
+          />
+        </div>
         <h1 className="text-red-600 sm:text-green-600 md:text-blue-600 lg:text-yellow-600">
           About Me
         </h1>
@@ -50,7 +80,7 @@ export function About() {
           </a>
           <AiOutlineDownload className="text-7xl" />
         </div>
-        <div className="flex justify-center items-center space-x-4 text-gray-200">
+        {/* <div className="flex justify-center items-center space-x-4 text-gray-200">
           <Link to="/">
             <div className="justify-center items-center hover:text-black cursor-pointer">
               <BsFillCircleFill />
@@ -69,6 +99,16 @@ export function About() {
               <BsFillCircleFill />
             </div>
           </Link>
+        </div> */}
+        <div className="flex justify-center">
+          <BsChevronCompactDown
+            onClick={() => {
+              document
+                .getElementById('skills')
+                .scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-9xl"
+          />
         </div>
       </div>
     </div>
@@ -77,8 +117,21 @@ export function About() {
 
 export function Skills() {
   return (
-    <div className="flex h-screen justify-center">
+    <div
+      id="skills"
+      className="flex h-screen justify-center bg-gray-200 snap-start"
+    >
       <div className="flex-col self-center">
+        <div className="flex justify-center">
+          <BsChevronCompactUp
+            onClick={() => {
+              document
+                .getElementById('about')
+                .scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-9xl"
+          />
+        </div>
         <h1 className="flex justify-center sm:text-blue-600 md:text-green-600 lg:text-yellow-600">
           Skills
         </h1>
@@ -99,7 +152,7 @@ export function Skills() {
             />
           </div>
         </div>
-        <div className="flex justify-center items-center space-x-4 text-gray-200">
+        {/* <div className="flex justify-center items-center space-x-4 text-gray-200">
           <Link to="/">
             <div className="justify-center items-center hover:text-black cursor-pointer">
               <BsFillCircleFill />
@@ -118,6 +171,16 @@ export function Skills() {
               <BsFillCircleFill />
             </div>
           </Link>
+        </div> */}
+        <div className="flex justify-center">
+          <BsChevronCompactDown
+            onClick={() => {
+              document
+                .getElementById('projects')
+                .scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-9xl"
+          />
         </div>
       </div>
     </div>
@@ -125,26 +188,75 @@ export function Skills() {
 }
 
 export function Projects() {
-  return <h1 className="text-black">Projects page</h1>
+  return (
+    <div
+      id="projects"
+      className="flex flex-col h-screen justify-center items-center mx-5lg:mx-20 snap-start"
+    >
+      <div className="flex justify-center">
+        <BsChevronCompactUp
+          onClick={() => {
+            document
+              .getElementById('skills')
+              .scrollIntoView({ behavior: 'smooth' })
+          }}
+          className="text-9xl"
+        />
+      </div>
+      <h1 className="flex justify-center items-center sm:text-blue-600 md:text-green-600 lg:text-yellow-600">
+        Projects
+      </h1>
+      <div className="flex flex-col justify-center sm:flex-row flex-wrap my-10">
+        <img
+          src={hhh}
+          alt="Happy hour Hacks website"
+          width={400}
+          className="m-3 rounded-md"
+        />
+        <img
+          src={hhh}
+          alt="Happy hour Hacks website"
+          width={400}
+          className="m-3 rounded-md"
+        />
+        <img
+          src={hhh}
+          alt="Happy hour Hacks website"
+          width={400}
+          className="m-3 rounded-md"
+        />
+      </div>
+      {/* <div className="flex justify-center items-center space-x-4 text-gray-200">
+        <Link to="/">
+          <div className="justify-center items-center hover:text-black cursor-pointer">
+            <BsFillCircleFill />
+          </div>
+        </Link>
+        <Link to="/about">
+          <div className="justify-center items-center hover:text-black cursor-pointer">
+            <BsFillCircleFill />
+          </div>
+        </Link>
+        <Link to="/skills">
+          <div className="justify-center items-center hover:text-black cursor-pointer">
+            <BsFillCircleFill />
+          </div>
+        </Link>
+        <div className="justify-center items-center text-black hover:text-black cursor-pointer">
+          <BsFillCircleFill />
+        </div>
+      </div> */}
+    </div>
+  )
 }
 
 export function App() {
   return (
-    <div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/skills">
-          <Skills />
-        </Route>
-        <Route exact path="/projects">
-          <Projects />
-        </Route>
-      </Switch>
+    <div className="h-screen overflow-x-scroll snap snap-y snap-mandatory">
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
     </div>
   )
 }
