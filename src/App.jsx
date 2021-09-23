@@ -12,18 +12,29 @@ import html5 from './images/html5.svg'
 import react from './images/react.svg'
 import tailwindcss from './images/tailwindcss.svg'
 import hhh from './images/hhh.png'
+import AMclone from './images/AMclone.png'
+import cal from './images/cal.png'
 
 export function Home() {
+  const textRef = useRef()
+
+  useEffect(() => {
+    init(textRef.current, {
+      showCursor: false,
+      backDelay: 1500,
+      strings: ['Developer', 'Desginer', 'Bicycle Enthusiast'],
+    })
+  }, [])
+
   return (
     <div
       id="home"
       className="flex h-screen items-center justify-center bg-gray-200 snap-start"
     >
       <div className="flex-col">
-        <h1 className="name">Karl Frick</h1>
-        <h3 className="nouns">
-          Is a <span className="text-red-600">Frontend Developer</span>{' '}
-          <span className="text-red-600">Designer</span>
+        <h1 className="text-title">Karl Frick</h1>
+        <h3 className="text-subtitle">
+          A <span ref={textRef}></span>
         </h3>
         <div className="flex justify-center">
           <BsChevronCompactDown
@@ -167,24 +178,30 @@ export function Projects() {
         Projects
       </h1>
       <div className="flex flex-col justify-center sm:flex-row flex-wrap my-10">
-        <img
-          src={hhh}
-          alt="Happy hour Hacks website"
-          width={400}
-          className="m-3 rounded-md"
-        />
-        <img
-          src={hhh}
-          alt="Happy hour Hacks website"
-          width={400}
-          className="m-3 rounded-md"
-        />
-        <img
-          src={hhh}
-          alt="Happy hour Hacks website"
-          width={400}
-          className="m-3 rounded-md"
-        />
+        <a href="https://happyhourhacks.herokuapp.com">
+          <img
+            src={hhh}
+            alt="Happy hour Hacks website"
+            width={250}
+            className="m-3 rounded-md"
+          />
+        </a>
+        <a href="https://github.com/kfric/TrackList">
+          <img
+            src={AMclone}
+            alt="Happy hour Hacks website"
+            width={250}
+            className="m-3 rounded-md"
+          />
+        </a>
+        <a href="https://github.com/kfric/react-calculator">
+          <img
+            src={cal}
+            alt="Happy hour Hacks website"
+            width={250}
+            className="m-3 rounded-md"
+          />
+        </a>
       </div>
     </div>
   )
