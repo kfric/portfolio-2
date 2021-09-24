@@ -15,6 +15,8 @@ import hhh from './images/hhh.png'
 import AMclone from './images/AMclone.png'
 import cal from './images/cal.png'
 
+import resume from './files/resume.pdf'
+
 export function Home() {
   const textRef = useRef()
 
@@ -88,7 +90,9 @@ export function About() {
           <a href="https://github.com/kfric">
             <AiFillGithub className="text-7xl" />
           </a>
-          <AiOutlineDownload className="text-7xl" />
+          <a href={resume} download>
+            <AiOutlineDownload className="text-7xl" />
+          </a>
         </div>
         <div className="flex justify-center">
           <BsChevronCompactDown
