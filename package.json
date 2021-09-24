@@ -5,10 +5,11 @@
     "start": "craco start",
     "build": "craco build",
     "predeploy": "react-scripts build",
-    "deploy": "echo 'To setup deployment run: npm run setup-deploy'",
+    "deploy": "netlify deploy --prod --dir=build",
     "setup-deploy": "app-app --deploy && npm run deploy",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postdeploy": "echo 'Your site was deployed to https://karlfrick.netlify.app'"
   },
   "browserslist": [
     ">0.2%",
@@ -40,5 +41,6 @@
     "postcss": "^7.0.36",
     "prettier": "^2.4.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
-  }
+  },
+  "homepage": "https://karlfrick.netlify.app"
 }
