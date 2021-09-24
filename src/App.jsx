@@ -22,14 +22,14 @@ export function Home() {
     init(textRef.current, {
       showCursor: false,
       backDelay: 1500,
-      strings: ['Developer', 'Desginer', 'Bicycle Enthusiast'],
+      strings: ['Developer', 'Designer', 'Bicycle Enthusiast'],
     })
   }, [])
 
   return (
     <div
       id="home"
-      className="flex h-screen items-center justify-center bg-gray-200 snap-start"
+      className="flex h-screen items-center bg-hero-lg bg-cover justify-center snap-start"
     >
       <div className="flex-col">
         <h1 className="text-title">Karl Frick</h1>
@@ -43,7 +43,7 @@ export function Home() {
                 .getElementById('about')
                 .scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-9xl text-gray-300 hover:text-black cursor-pointer"
+            className="text-9xl text-black text-opacity-50 hover:text-opacity-100 cursor-pointer"
           />
         </div>
       </div>
@@ -62,18 +62,17 @@ export function About() {
                 .getElementById('home')
                 .scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-9xl text-gray-300 hover:text-black cursor-pointer"
+            className="text-9xl text-black text-opacity-10 hover:text-opacity-100 cursor-pointer"
           />
         </div>
-        <h1 className="flex justify-center text-xl sm:text-blue-600 md:text-green-600 lg:text-yellow-600">
-          About Me
-        </h1>
+        <h1 className="flex justify-center text-xl text-blue-700">About Me</h1>
         <div className="my-10 space-y-5">
           <p className="text-indent">
-            A Full-stack Web Developer from St. Petersburg, FL 🌴. With a
-            passion for frontend, I enjoy creating and designing client side
-            applications. I have worked on several applications and I have
-            always challenged myself with learning something new each time.
+            A Full-stack Web Developer from St. Petersburg, FL 🌴. I embrace the
+            challenges that come with server-side applications and enjoy
+            designing client facing sites. I have worked on several full-stack
+            applications, and I have always challenged myself with learning
+            something new each time.
           </p>
           <p className="text-indent">
             Being part of a team that values growth and continuous learning is
@@ -98,7 +97,7 @@ export function About() {
                 .getElementById('skills')
                 .scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-9xl text-gray-300 hover:text-black cursor-pointer"
+            className="text-9xl text-black text-opacity-10 hover:text-opacity-100 cursor-pointer"
           />
         </div>
       </div>
@@ -120,26 +119,23 @@ export function Skills() {
                 .getElementById('about')
                 .scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-9xl text-gray-300 hover:text-black cursor-pointer"
+            className="text-9xl text-black text-opacity-10 hover:text-opacity-100 cursor-pointer"
           />
         </div>
-        <h1 className="flex justify-center text-xl sm:text-blue-600 md:text-green-600 lg:text-yellow-600">
-          Skills
-        </h1>
+        <h1 className="flex justify-center text-xl text-purple-800">Skills</h1>
         <div className="flex sm:flex-col my-10">
           <div className="flex flex-col justify-center sm:flex-row">
-            <img src={bulma} alt="Bulma logo" width={150} className="m-5" />
-            <img src={cSharp} alt="C sharp logo" width={150} className="m-5" />
-            <img src={css3} alt="CSS 3 logo" width={150} className="m-5" />
+            <img src={bulma} alt="Bulma logo" className="m-5 w-24 md:w-36" />
+            <img src={cSharp} alt="C sharp logo" className="m-5 w-24 md:w-36" />
+            <img src={css3} alt="CSS 3 logo" className="m-5 w-24 md:w-40" />
           </div>
           <div className="flex flex-col justify-center sm:flex-row">
-            <img src={html5} alt="HTML 5 logo" width={150} className="m-5" />
-            <img src={react} alt="React logo" width={150} className="m-5" />
+            <img src={html5} alt="HTML 5 logo" className="m-5 w-24 md:w-36" />
+            <img src={react} alt="React logo" className="m-5 w-24 md:w-36" />
             <img
               src={tailwindcss}
               alt="Tailwind CSS logo"
-              width={150}
-              className="m-5"
+              className="m-5 w-24 md:w-36"
             />
           </div>
         </div>
@@ -150,7 +146,7 @@ export function Skills() {
                 .getElementById('projects')
                 .scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-9xl text-gray-300 hover:text-black cursor-pointer"
+            className="text-9xl text-black text-opacity-10 hover:text-opacity-100 cursor-pointer"
           />
         </div>
       </div>
@@ -171,35 +167,30 @@ export function Projects() {
               .getElementById('skills')
               .scrollIntoView({ behavior: 'smooth' })
           }}
-          className="text-9xl text-gray-300 hover:text-black cursor-pointer"
+          className="text-9xl text-black text-opacity-10 hover:text-opacity-100 cursor-pointer"
         />
       </div>
-      <h1 className="flex justify-center text-xl sm:text-blue-600 md:text-green-600 lg:text-yellow-600">
-        Projects
-      </h1>
+      <h1 className="flex justify-center text-xl text-red-600">Projects</h1>
       <div className="flex flex-col justify-center sm:flex-row flex-wrap my-10">
         <a href="https://happyhourhacks.herokuapp.com">
           <img
             src={hhh}
             alt="Happy hour Hacks website"
-            width={250}
-            className="m-3 rounded-md"
+            className="m-3 rounded-md w-32 md:w-60"
           />
         </a>
         <a href="https://github.com/kfric/TrackList">
           <img
             src={AMclone}
-            alt="Happy hour Hacks website"
-            width={250}
-            className="m-3 rounded-md"
+            alt="Track List repo"
+            className="m-3 rounded-md w-32 md:w-60"
           />
         </a>
         <a href="https://github.com/kfric/react-calculator">
           <img
             src={cal}
-            alt="Happy hour Hacks website"
-            width={250}
-            className="m-3 rounded-md"
+            alt="React Calculator repo"
+            className="m-3 rounded-md w-32 md:w-60"
           />
         </a>
       </div>

@@ -96,6 +96,7 @@ module.exports = {
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl':
         'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'hero-lg': "url('../src/images/dtsp.jpg')",
     },
     backgroundOpacity: theme => theme('opacity'),
     backgroundPosition: {
