@@ -127,7 +127,7 @@ export function Skills() {
           />
         </div>
         <h1 className="flex justify-center text-xl text-purple-800">Skills</h1>
-        <div className="flex sm:flex-col my-10">
+        <div className="flex sm:flex-col my-3">
           <div className="flex flex-col justify-center sm:flex-row">
             <img src={bulma} alt="Bulma logo" className="m-5 w-24 md:w-36" />
             <img src={cSharp} alt="C sharp logo" className="m-5 w-24 md:w-36" />
@@ -175,7 +175,7 @@ export function Projects() {
         />
       </div>
       <h1 className="flex justify-center text-xl text-red-600">Projects</h1>
-      <div className="flex flex-col justify-center sm:flex-row flex-wrap my-10">
+      <div className="flex justify-center sm:flex-row flex-wrap my-3">
         <a href="https://happyhourhacks.herokuapp.com">
           <img
             src={hhh}
