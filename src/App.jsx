@@ -45,7 +45,7 @@ export function Home() {
                 .getElementById('about')
                 .scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-9xl text-black text-opacity-50 hover:text-opacity-100 cursor-pointer"
+            className="text-9xl text-black text-opacity-50 animate-bounce hover:text-opacity-100 cursor-pointer"
           />
         </div>
       </div>
